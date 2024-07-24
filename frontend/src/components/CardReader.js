@@ -34,6 +34,7 @@ function CardReader() {
     try {
       await sendEventData({ data: cardInput });
       console.log("Veri başarıyla gönderildi.");
+      setCardInput(""); //Reset the input file
     } catch (error) {
       console.error("Veri gönderilirken bir hata oluştu:", error);
     }
