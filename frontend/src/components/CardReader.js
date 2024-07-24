@@ -132,6 +132,7 @@ function CardReader() {
         console.error("Kullanıcı bulunamadı.");
         message.error("Etkinliğe Kaydınız Oluşturulamadı!");
       }
+      setCardInput(""); //Reset the input file
     } catch (error) {
       console.error("Kullanıcı eklenirken bir hata oluştu:", error);
     }
