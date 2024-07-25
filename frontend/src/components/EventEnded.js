@@ -5,10 +5,10 @@ import { useNavigate, useParams } from "react-router-dom";
 
 function EventEnded() {
   const navigate = useNavigate();
-  const { eventId } = useParams();//get eventId from URL parameters
+  const { EventID } = useParams();//get eventId from URL parameters
 
   const handlePersonelList = () => {
-    navigate(`/participant-list/${eventId}`);
+    navigate(`/participant-list/${EventID}`);
   };
 
   return (

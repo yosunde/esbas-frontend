@@ -87,9 +87,9 @@ import axios from "axios";
 import { message } from "antd";
 import "./CardReader.css";
 
-const sendUserEvent = async (userEvent) => {
+const sendUserEvent = async (eventUser) => {
   try {
-    await axios.post('http://localhost:3005/userEvents', userEvent);
+    await axios.post('http://localhost:3005/Events_Users',  eventUser);
   } catch (error) {
     throw new Error('Error sending user event');
   }
@@ -97,7 +97,7 @@ const sendUserEvent = async (userEvent) => {
 
 const fetchUserByCardId = async (cardId) => {
   try {
-    const response = await axios.get(`http://localhost:3005/users?card-id=${cardId}`);
+    const response = await axios.get(`http://localhost:3005/Users?UserID=${cardId}`);
     return response.data[0]; // Assuming the card ID is unique and returns a single user
   } catch (error) {
     throw new Error('Error fetching user by card ID');
@@ -106,15 +106,15 @@ const fetchUserByCardId = async (cardId) => {
 
 function CardReader() {
   const navigate = useNavigate();
-  const { eventId } = useParams();
+  const {EventID} = useParams();
   const [cardInput, setCardInput] = useState("");
 
   const handleEndEvent = () => {
-    navigate(`/event-ended/${eventId}`);
+    navigate(`/event-ended/${EventID}`);
   };
 
   const handleManualEntry = () => {
-    navigate(`/add-new-participant/${eventId}`);
+    navigate(`/add-new-participant/${EventID}`);
   };
 
   const handleChange = (event) => {
@@ -126,7 +126,7 @@ function CardReader() {
     try {
       const user = await fetchUserByCardId(cardInput);
       if (user) {
-        await sendUserEvent({ eventId, userId: user.id });
+        await sendUserEvent({ EventID: EventID, UserID: user.id });
         console.log("Kullanıcı başarıyla etkinliğe eklendi.");
         message.success("Etkinliğe Katılımınız Başarıyla Gerçekleşti");
       } else {
@@ -153,7 +153,7 @@ function CardReader() {
       <div className="card-reader">
         <h1> ETKİNLİĞE HOŞGELDİNİZ </h1>
         <p> LÜTFEN KARTINIZI OKUTUNUZ! </p>
-        <p> Etkinlik ID: {eventId} </p>
+        <p> Etkinlik ID: {EventID} </p>
         <input
           autoFocus
           type="text"

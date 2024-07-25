@@ -10,7 +10,7 @@ const EventList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:3005/events')
+    axios.get('http://localhost:3005/Events')
       .then(response => {
         setEvents(response.data);
       })
@@ -19,12 +19,12 @@ const EventList = () => {
       });
   }, []);
 
-  const handleParticipantClick = (eventId) => {
-    navigate(`/participant-list/${eventId}`);
+  const handleParticipantClick = (EventID) => {
+    navigate(`/participant-list/${EventID}`);
   };
 
-  const handleStartClick = (eventId) => {
-    navigate(`/card-reader/${eventId}`);
+  const handleStartClick = (EventID) => {
+    navigate(`/card-reader/${EventID}`);
   };
 
   const handleYeniEtkinlik = () => {
@@ -36,7 +36,7 @@ const EventList = () => {
   };
 
   const filteredEvents = events.filter(event => 
-    event.name?.toLowerCase().includes(searchTerm.toLowerCase())
+    event.EventName?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -73,24 +73,24 @@ const EventList = () => {
           </thead>
           <tbody>
             {filteredEvents.map(event => (
-              <tr key={event.id}>
-                <td>{event.id}</td>
-                <td>{event.name}</td>
-                <td>{event.type}</td>
-                <td>{event.location}</td>
-                <td>{event.time}</td>
+              <tr key={event.EventID}>
+                <td>{event.EventID}</td>
+                <td>{event.EventName}</td>
+                <td>{event.EventType}</td>
+                <td>{event.Location}</td>
+                <td>{event.EventDateTime}</td>
                 <td>
                   {event.button === "Katılımcı Listesi" ? (
                     <button
                       className="katilimci-butonu"
-                      onClick={() => handleParticipantClick(event.id)}
+                      onClick={() => handleParticipantClick(event.EventID)}
                     >
                       Katılımcı Listesi
                     </button>
                   ) : (
                     <button
                       className="baslat-butonu"
-                      onClick={() => handleStartClick(event.id)}
+                      onClick={() => handleStartClick(event.EventID)}
                     >
                       Başlat
                     </button>

@@ -18,13 +18,13 @@ const AddNewEvent = () => {
 
   const handleSave = () => {
     const newEvent = {
-      name: eventName,
-      type: eventType,
-      location: location,
-      time: time,
+      EventName: eventName,
+      EventType: eventType,
+      Location: location,
+      EventDateTime: time,
     };
 
-    axios.post('http://localhost:3005/events', newEvent)
+    axios.post('http://localhost:3005/Events', newEvent)
       .then(response => {
         console.log('Event added successfully:', response.data);
         // Optionally, you can reset the form or navigate to another page

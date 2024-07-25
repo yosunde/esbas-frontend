@@ -7,7 +7,7 @@ import { saveAs } from 'file-saver';
 import axios from 'axios';  
 
 const ParticipantList = () => {  
-    const { eventId } = useParams(); // Correctly destructuring to get eventId  
+    const { EventID } = useParams(); // Correctly destructuring to get eventId  
     const navigate = useNavigate();
     const [users, setUsers] = useState([]); 
     const [loading, setLoading] = useState(true); 
@@ -17,30 +17,30 @@ const ParticipantList = () => {
         const fetchData = async () => {
             try {
                 // Fetch user events and users
-                const [userEventsResponse, usersResponse] = await Promise.all([
-                    axios.get('http://localhost:3005/userEvents'),
-                    axios.get('http://localhost:3005/users')
+                const [eventsUsersResponse, usersResponse] = await Promise.all([
+                    axios.get('http://localhost:3005/Events_Users'),
+                    axios.get('http://localhost:3005/Users')
                 ]);
-                
-                console.log('UsersEventsResponse:', userEventsResponse.data);
+                console.log('EventsUsersResponse:', eventsUsersResponse.data);
                 console.log('UsersResponse:', usersResponse.data);
 
-                // Create a map for user events
-                const userEventsMap = userEventsResponse.data.reduce((map, item) => {
-                    if (!map[item.eventId]) {
-                        map[item.eventId] = [];
+                // Create a map for Events_Users
+                const eventsUsersMap = eventsUsersResponse.data.reduce((map, item) => {
+                    if (!map[item.EventID]) {
+                        map[item.EventID] = [];
                     }
-                    map[item.eventId].push(item.userId);
+                    map[item.EventID].push(item.UserID);
                     return map;
                 }, {});
 
-                console.log('User Events Map:', userEventsMap);
-                console.log('Current Event ID:', eventId);
-                console.log('User IDs for current event:', userEventsMap[eventId]);
+                console.log('Events Users Map:', eventsUsersMap);
+                console.log('Current Event ID:', EventID);
+                console.log('User IDs for current event:', eventsUsersMap[EventID]);
+
 
                 // Get the list of users for the selected event
                 const updatedUsers = usersResponse.data.filter(user =>
-                    (userEventsMap[eventId] || []).includes(user.id)
+                    (eventsUsersMap[EventID] || []).includes(user.ID)
                 );
 
                 console.log('Filtered Users:', updatedUsers);
@@ -54,7 +54,7 @@ const ParticipantList = () => {
         };
 
         fetchData();
-    }, [eventId]); // Re-fetch when eventId changes
+    }, [EventID]); // Re-fetch when eventId changes
 
 
     const exportToExcel = () => {  
@@ -97,13 +97,13 @@ const ParticipantList = () => {
                             </thead>  
                             <tbody>  
                                 {users.map((user, index) => (  
-                                    <tr key={user.id}>  
+                                    <tr key={user.ID}>  
                                         <td> {index + 1} </td>  
-                                        <td> {user['name-surname']} </td>  
-                                        <td> {user['card-id']} </td>  
-                                        <td> {user.department} </td>  
-                                        <td> {user.konum} </td>  
-                                        <td> {user.cinsiyet} </td> 
+                                        <td> {user.FullName} </td>  
+                                        <td> {user.UserID} </td>  
+                                        <td> {user.Department} </td>  
+                                        <td> {user.IsOfficeEmployee} </td>  
+                                        <td> {user.Gender} </td> 
                                         <td> 
                                             <button className="update-button">
                                             <FaEdit />
@@ -118,7 +118,7 @@ const ParticipantList = () => {
                         </table>  
                     </div>  
                    )}
-                <Link to={`/add-new-participant/${eventId}`} className="add-button">  
+                <Link to={`/add-new-participant/${EventID}`} className="add-button">  
                     Yeni Katılımcı  
                 </Link> 
                 

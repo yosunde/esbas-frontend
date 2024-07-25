@@ -18,10 +18,10 @@ function App() {
             <Routes>
                 <Route path="/" element= {<EventList />} /> 
                 <Route path="/add-new-event" element= {<AddNewEvent />} /> 
-                <Route path="/card-reader/:eventId" element= {<CardReader />} />
-                <Route path="/event-ended/:eventId" element= {<EventEnded />} />
-                <Route path="/add-new-participant/:eventId" element= {<AddNewParticipant />} />
-                <Route path="/participant-list/:eventId" element={<ParticipantList />} />
+                <Route path="/card-reader/:EventID" element= {<CardReader />} />
+                <Route path="/event-ended/:EventID" element= {<EventEnded />} />
+                <Route path="/add-new-participant/:EventID" element= {<AddNewParticipant />} />
+                <Route path="/participant-list/:EventID" element={<ParticipantList />} />
                 <Route path="/add-new-event/event-type" element= {<EventType />} />
                 <Route path="/add-new-event/event-location" element= {<EventLocation />} />
                 <Route path="/add-new-participant/participant-department" element= {<ParticipantDepartment />} />

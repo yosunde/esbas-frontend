@@ -7,13 +7,13 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 const AddNewParticipant = () => {
   const navigate = useNavigate();
-  const {eventId} = useParams();
+  const {EventId} = useParams();
   const [form, setForm] = useState({
-    "name-surname": "",
-    "card-id" : "",
-    department: "",
-    konum: "",
-    cinsiyet: "",
+    "FullName": "",
+    "UserID" : "",
+    Deparment: "",
+    IsOfficeEmployee: "",
+    Gender: "",
   });
 
   const handleChange = (e) => {
@@ -28,13 +28,13 @@ const AddNewParticipant = () => {
     e.preventDefault();
     try {
        // Add the new user
-       const userResponse = await axios.post('http://localhost:3005/users', form);
+       const userResponse = await axios.post('http://localhost:3005/Users', form);
       
        // Link the new user to the event
-       const userId = userResponse.data.id; // Get the new user's ID
-       await axios.post('http://localhost:3005/userEvents', { eventId: parseInt(eventId), userId });
+       const UserId = userResponse.data.id; // Get the new user's ID
+       await axios.post('http://localhost:3005/Events_Users', { EventId: parseInt(EventId), UserId });
  
-       navigate(`/participant-list/${eventId}`);
+       navigate(`/participant-list/${EventId}`);
      } catch (error) {
        console.error('Error adding participant:', error);
      }
@@ -57,8 +57,8 @@ const AddNewParticipant = () => {
             Ad Soyad:
             <input
               type="text"
-              name="name-surname"
-              value={form["name-surname"]}
+              name="FullName"
+              value={form["FullName"]}
               onChange={handleChange}
               required
             />
@@ -67,8 +67,8 @@ const AddNewParticipant = () => {
             ID:
             <input
               type="text"
-              name="card-id"
-              value={form["card-id"]}
+              name="UserID"
+              value={form["UserID"]}
               onChange={handleChange}
               required
             />
@@ -81,8 +81,8 @@ const AddNewParticipant = () => {
             className="icon"
             />
             <select
-              name="department"
-              value={form.department}
+              name="Department"
+              value={form.Department}
               onChange={handleChange}
               required
             >
@@ -99,8 +99,8 @@ const AddNewParticipant = () => {
             className="icon"
             />
             <select
-              name="konum"
-              value={form.konum}
+              name="IsOfficeEmployee"
+              value={form.IsOfficeEmployee}
               onChange={handleChange}
               required
             >
@@ -117,8 +117,8 @@ const AddNewParticipant = () => {
             className="icon"
             />
             <select
-              name="cinsiyet"
-              value={form.cinsiyet}
+              name="Gender"
+              value={form.Gender}
               onChange={handleChange}
               required
             >
