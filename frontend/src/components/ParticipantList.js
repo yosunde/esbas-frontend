@@ -65,12 +65,15 @@ const ParticipantList = () => {
         const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });  
         saveAs(blob, 'katilimci-listesi.xlsx');  
     };  
+    const handleLoGoClick =()=>{
+    navigate("/");
+    }
 
 
     return (  
         <div className="container">  
             <header className="header">  
-                <img src="./logo-esbas.png" alt="ESBAŞ Logo" className="logo" />  
+                <img src="./logo-esbas.png" onClick={handleLoGoClick} alt="ESBAŞ Logo" className="logo" />  
             </header>  
             <div className="participant-list">  
                 <div className="toolbar">  
