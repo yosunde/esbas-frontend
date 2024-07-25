@@ -80,21 +80,21 @@ const EventList = () => {
                 <td>{event.Location}</td>
                 <td>{event.EventDateTime}</td>
                 <td>
-                  {event.button === "Katılımcı Listesi" ? (
-                    <button
-                      className="katilimci-butonu"
-                      onClick={() => handleParticipantClick(event.EventID)}
-                    >
-                      Katılımcı Listesi
-                    </button>
-                  ) : (
+                  {event.status === 0 ? (
                     <button
                       className="baslat-butonu"
                       onClick={() => handleStartClick(event.EventID)}
                     >
                       Başlat
                     </button>
-                  )}
+                  ) : event.status === 1 ? (
+                    <button
+                      className="katilimci-butonu"
+                      onClick={() => handleParticipantClick(event.EventID)}
+                    >
+                      Katılımcı Listesi
+                    </button>
+                  ): null}
                 </td>
                 <td>
                   <button className="update-button">
