@@ -126,7 +126,7 @@ function CardReader() {
     try {
       const user = await fetchUserByCardId(cardInput);
       if (user) {
-        await sendUserEvent({ EventID: EventID, UserID: user.id });
+        await sendUserEvent({ EventID: EventID, UserID: user.ID });
         console.log("Kullanıcı başarıyla etkinliğe eklendi.");
         message.success("Etkinliğe Katılımınız Başarıyla Gerçekleşti");
       } else {
@@ -145,14 +145,10 @@ function CardReader() {
     }
   };
 
-  const handleLoGoClick =()=>{
-  navigate("/");
-  }
-
   return (
     <div className="CardReader">
       <header className="header">
-        <img src={"./logo-esbas.png"} onClick={handleLoGoClick} className="logo" alt="logo" />
+        <img src={"./logo-esbas.png"} className="logo" alt="logo" />
       </header>
       <div className="card-reader">
         <h1> ETKİNLİĞE HOŞGELDİNİZ </h1>
@@ -184,4 +180,6 @@ function CardReader() {
 }
 
 export default CardReader;
+
+
 
