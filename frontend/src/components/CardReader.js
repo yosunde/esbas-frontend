@@ -80,6 +80,7 @@ function CardReader() {
 }
 
 export default CardReader; */
+//cardreader.js
 
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -97,6 +98,9 @@ const sendUserEvent = async (eventUser) => {
 
 const fetchUserByCardId = async (cardId) => {
   try {
+   /*let strcardID = cardId.toString();
+   
+   console.log(strcardID); */
     const response = await axios.get(`http://localhost:3005/Users?UserID=${cardId}`);
     return response.data[0]; // Assuming the card ID is unique and returns a single user
   } catch (error) {
@@ -126,7 +130,7 @@ function CardReader() {
     try {
       const user = await fetchUserByCardId(cardInput);
       if (user) {
-        await sendUserEvent({ EventID: EventID, UserID: user.id });
+        await sendUserEvent({ EventID: EventID, UserID: user.ID });
         console.log("Kullanıcı başarıyla etkinliğe eklendi.");
         message.success("Etkinliğe Katılımınız Başarıyla Gerçekleşti");
       } else {
