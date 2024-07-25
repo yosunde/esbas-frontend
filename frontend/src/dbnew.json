@@ -1,0 +1,33 @@
+{
+    "Users": [
+        {},{}
+    ],
+
+    "Events": [
+        {},{}
+    ], 
+
+    "Events_Users":[
+        {},{}
+    ],
+
+    "Event_Type":[
+        {},{}
+    ],
+
+    "Event_Location": [
+        {},{}
+    ],
+
+    "User_Department": [
+        {},{}
+    ],
+
+    "User_Gender": [
+        {},{}
+    ],
+
+    "User_IsOfficeEmployee": [
+        {},{}
+    ]
+}
