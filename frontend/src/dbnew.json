@@ -1,6 +1,7 @@
 {
   "Users": [
     {
+      "ID": 1,
       "UserID": "0005666260",
       "FullName": "Cengizhan Kaya",
       "Department": "IT",
@@ -8,10 +9,10 @@
       "Gender": "Male",
       "D_ID": 1,
       "I_ID": 1,
-      "G_ID": 1,
-      "id": "9290"
+      "G_ID": 1
     },
     {
+      "ID": 2,
       "UserID": "0005605224",
       "FullName": "Selman Emre Erol",
       "Department": "IT",
@@ -19,10 +20,10 @@
       "Gender": "Male",
       "D_ID": 1,
       "I_ID": 1,
-      "G_ID": 1,
-      "id": "bab0"
+      "G_ID": 1
     },
     {
+      "ID": 3,
       "UserID": "0005358069",
       "FullName": "Atalay Beyazıt",
       "Department": "IT",
@@ -30,10 +31,10 @@
       "Gender": "Male",
       "D_ID": 1,
       "I_ID": 1,
-      "G_ID": 1,
-      "id": "c6f7"
+      "G_ID": 1
     },
     {
+      "ID": 4,
       "UserID": "0005733290",
       "FullName": "Ceren Sezmen",
       "Department": "CR",
@@ -41,10 +42,10 @@
       "Gender": "Female",
       "D_ID": 2,
       "I_ID": 1,
-      "G_ID": 2,
-      "id": "2185"
+      "G_ID": 2
     },
     {
+      "ID": 5,
       "UserID": "0005573272",
       "FullName": "Sude Uysal",
       "Department": "IT",
@@ -52,13 +53,12 @@
       "Gender": "Female",
       "D_ID": 1,
       "I_ID": 1,
-      "G_ID": 1,
-      "id": "bc0b"
+      "G_ID": 1
     }
   ],
   "Events": [
     {
-        "EventID": 1,
+      "EventID": 1,
       "EventName": "İnovasyon Odaklı Kültür Geliştirme Eğitimi Programı",
       "EventType": "Eğitim",
       "Location": "Toplantı Salonu",
@@ -66,7 +66,7 @@
       "Status": "Null"
     },
     {
-        "EventID": 2,
+      "EventID": 2,
       "EventName": "Orientation for Interns",
       "EventType": "Toplantı",
       "Location": "Toplantı Salonu",
@@ -74,12 +74,19 @@
       "Status": "Null"
     },
     {
-        "EventID": 3,
+      "EventID": 3,
       "EventName": "Yaza Merhaba Partisi",
       "EventType": "Parti",
       "Location": "Bahçe",
       "EventDateTime": "12.07.2024/09.00",
       "Status": "Null"
+    },
+    {
+      "id": "82e0",
+      "EventName": "Dünya Kadınlar Günü Kutlaması",
+      "EventType": "Parti",
+      "Location": "Bahçe",
+      "EventDateTime": "08.03.2025/13.00"
     }
   ],
   "Events_Users": [
@@ -97,6 +104,16 @@
       "ID": 3,
       "EventID": 1,
       "UserID": 3
+    },
+    {
+      "ID": 4,
+      "EventID": 2,
+      "UserID": 2
+    },
+    {
+      "id": "8c9a",
+      "EventID": "2",
+      "UserID": 5
     }
   ],
   "Event_Type": [
