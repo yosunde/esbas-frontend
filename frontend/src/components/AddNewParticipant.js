@@ -44,11 +44,15 @@ const AddNewParticipant = () => {
     navigate(path);
   };
 
+  const handleLoGoClick =()=>{
+  navigate("/");
+  }
+
 
   return (
     <div className="add-participant-container">
       <header className="header">
-        <img src={"./logo-esbas.png"} className="logo" alt="ESBAŞ Logo" />
+        <img src={"./logo-esbas.png"} onClick={handleLoGoClick}  className="logo" alt="ESBAŞ Logo" />
       </header>{" "}
       <div className="add-participant">
         <h2> Yeni Katılımcı Ekle </h2>{" "}
