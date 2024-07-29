@@ -35,6 +35,10 @@ const EventList = () => {
     setSearchTerm(event.target.value);
   };
 
+  const handleUpdateClick = (EventID) => {
+    navigate(`/event-update/${EventID}`);
+  };
+
   const filteredEvents = events.filter(event => 
     event.EventName?.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -97,7 +101,9 @@ const EventList = () => {
                   ): null}
                 </td>
                 <td>
-                  <button className="update-button">
+                  <button className="update-button"
+                   onClick={() => handleUpdateClick(event.EventID)}
+                  >
                     <FaEdit />
                   </button>
                   <button className="delete-button">

@@ -95,7 +95,7 @@ tbody tr:nth-child(even) {
 }
 
 
-.update-button, .delete-button {
+.delete-button {
   font-size: 12px;  /* Smaller font size */
   padding: 4px 8px; /* Smaller padding */
   margin: 2px;      /* Smaller margin */
@@ -104,10 +104,7 @@ tbody tr:nth-child(even) {
   cursor: pointer;  /* Pointer cursor on hover */
 }
 
-.update-button {
-  background-color: #4CAF50; /* Green background */
-  color: white;              /* White text */
-}
+
 
 .delete-button {
   background-color: #f44336; /* Red background */
@@ -115,10 +112,6 @@ tbody tr:nth-child(even) {
   margin-left: 13px;
 }
 
-/* Optional: Add hover effects */
-.update-button:hover {
-  background-color: #45a049; /* Darker green on hover */
-}
 
 .delete-button:hover {
   background-color: #d32f2f; /* Darker red on hover */

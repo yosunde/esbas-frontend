@@ -1,7 +1,7 @@
 //participantlist.js
 import React, { useState, useEffect } from "react";  
 import { Link, useParams, useNavigate } from "react-router-dom"; 
-import { FaTrashAlt, FaEdit } from "react-icons/fa"; 
+import { FaTrashAlt } from "react-icons/fa"; 
 import "./ParticipantList.css";  
 import * as XLSX from 'xlsx';  
 import { saveAs } from 'file-saver';  
@@ -106,9 +106,6 @@ const ParticipantList = () => {
                                         <td> {user.IsOfficeEmployee} </td>  
                                         <td> {user.Gender} </td> 
                                         <td> 
-                                            <button className="update-button">
-                                            <FaEdit />
-                                            </button>
                                             <button className= "delete-button">
                                             <FaTrashAlt />
                                             </button>
