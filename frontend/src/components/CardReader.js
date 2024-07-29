@@ -105,6 +105,7 @@ const fetchUserByCardId = async (cardId) => {
   }
 };
 
+/*
 const updateEventStatus = async (EventID, Status) => {
   try {
     await axios.patch(`http://localhost:3005/Events/${EventID}`, { status: Status });
@@ -112,24 +113,24 @@ const updateEventStatus = async (EventID, Status) => {
     throw new Error('Error updating event status');
   }
 };
-
+*/
 
 function CardReader() {
   const navigate = useNavigate();
   const {EventID} = useParams();
   const [cardInput, setCardInput] = useState("");
 
-
+  
   const handleEndEvent = async () => {
     try {
-      await updateEventStatus(EventID, 1); 
+      //await updateEventStatus(EventID, 1); 
       message.success('Etkinlik başarıyla bitirildi');
       navigate(`/event-ended/${EventID}`);
     } catch (error) {
       console.error("Etkinlik durumu güncellenirken bir hata oluştu:", error);
       message.error('Etkinlik durumu güncellenirken bir hata oluştu');
     }
-  };
+  };  
 
   const handleManualEntry = () => {
     navigate(`/add-new-participant/${EventID}`);

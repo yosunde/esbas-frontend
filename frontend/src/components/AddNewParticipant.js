@@ -7,7 +7,7 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 const AddNewParticipant = () => {
   const navigate = useNavigate();
-  const {EventId} = useParams();
+  const {EventID} = useParams();
   const [form, setForm] = useState({
     "FullName": "",
     "UserID" : "",
@@ -31,10 +31,10 @@ const AddNewParticipant = () => {
        const userResponse = await axios.post('http://localhost:3005/Users', form);
       
        // Link the new user to the event
-       const UserId = userResponse.data.id; // Get the new user's ID
-       await axios.post('http://localhost:3005/Events_Users', { EventId: parseInt(EventId), UserId });
+       const UserID = userResponse.data.id; // Get the new user's ID
+       await axios.post('http://localhost:3005/Events_Users', { EventID: parseInt(EventID), UserID });
  
-       navigate(`/participant-list/${EventId}`);
+       navigate(`/participant-list/${EventID}`);
      } catch (error) {
        console.error('Error adding participant:', error);
      }
