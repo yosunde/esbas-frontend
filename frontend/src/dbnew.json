@@ -63,28 +63,38 @@
   ],
   "Events": [
     {
-      "EventID":1,
+      "EventID": 1,
       "EventName": "İnovasyon Odaklı Kültür Geliştirme Eğitimi Programı",
       "EventType": "Eğitim",
       "Location": "Toplantı Salonu",
       "EventDateTime": "24.06.2024/09.00",
-      "status": 0
+      "status": 0,
+      "id": "d5df"
     },
     {
-      "EventID":2,
+      "EventID": 2,
       "EventName": "Orientation for Interns",
       "EventType": "Toplantı",
       "Location": "Toplantı Salonu",
       "EventDateTime": "25.06.2024/09.00",
-      "status": 0
+      "status": 0,
+      "id": "29af"
     },
     {
-      "EventID":3,
+      "EventID": 3,
       "EventName": "Yaza Merhaba Partisi",
       "EventType": "Parti",
       "Location": "Bahçe",
       "EventDateTime": "12.07.2024/09.00",
-      "status": 0
+      "status": 0,
+      "id": "ec13"
+    },
+    {
+      "id": "a76e",
+      "EventName": "",
+      "EventType": "",
+      "Location": "",
+      "EventDateTime": ""
     }
   ],
   "Events_Users": [

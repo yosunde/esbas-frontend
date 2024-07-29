@@ -18,7 +18,7 @@ const EventList = () => {
         console.error('Error fetching data:', error);
       });
   }, []);
-
+  
   const handleParticipantClick = (EventID) => {
     navigate(`/participant-list/${EventID}`);
   };
