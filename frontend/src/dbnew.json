@@ -9,8 +9,12 @@
       "Gender": "Male",
       "D_ID": 1,
       "I_ID": 1,
+<<<<<<< HEAD
       "G_ID": 1,
       "id": "c6b9"
+=======
+      "G_ID": 1
+>>>>>>> ecfc411a1e342112ad51c33022fec2792772e825
     },
     {
       "ID": 2,
@@ -21,8 +25,12 @@
       "Gender": "Male",
       "D_ID": 1,
       "I_ID": 1,
+<<<<<<< HEAD
       "G_ID": 1,
       "id": "5dd6"
+=======
+      "G_ID": 1
+>>>>>>> ecfc411a1e342112ad51c33022fec2792772e825
     },
     {
       "ID": 3,
@@ -33,8 +41,12 @@
       "Gender": "Male",
       "D_ID": 1,
       "I_ID": 1,
+<<<<<<< HEAD
       "G_ID": 1,
       "id": "d161"
+=======
+      "G_ID": 1
+>>>>>>> ecfc411a1e342112ad51c33022fec2792772e825
     },
     {
       "ID": 4,
@@ -45,8 +57,12 @@
       "Gender": "Female",
       "D_ID": 2,
       "I_ID": 1,
+<<<<<<< HEAD
       "G_ID": 2,
       "id": "b447"
+=======
+      "G_ID": 2
+>>>>>>> ecfc411a1e342112ad51c33022fec2792772e825
     },
     {
       "ID": 5,
@@ -57,8 +73,12 @@
       "Gender": "Female",
       "D_ID": 1,
       "I_ID": 1,
+<<<<<<< HEAD
       "G_ID": 1,
       "id": "4003"
+=======
+      "G_ID": 1
+>>>>>>> ecfc411a1e342112ad51c33022fec2792772e825
     }
   ],
   "Events": [
@@ -86,8 +106,19 @@
       "EventType": "Parti",
       "Location": "Bahçe",
       "EventDateTime": "12.07.2024/09.00",
+<<<<<<< HEAD
       "status": 0,
       "id": "61fb"
+=======
+      "Status": "Null"
+    },
+    {
+      "id": "82e0",
+      "EventName": "Dünya Kadınlar Günü Kutlaması",
+      "EventType": "Parti",
+      "Location": "Bahçe",
+      "EventDateTime": "08.03.2025/13.00"
+>>>>>>> ecfc411a1e342112ad51c33022fec2792772e825
     }
   ],
   "Events_Users": [
@@ -131,6 +162,7 @@
       "UserID": 3
     },
     {
+<<<<<<< HEAD
       "id": "64e5",
       "EventID": "2",
       "UserID": 4
@@ -139,6 +171,16 @@
       "id": "ee81",
       "EventID": "1",
       "UserID": 4
+=======
+      "ID": 4,
+      "EventID": 2,
+      "UserID": 2
+    },
+    {
+      "id": "8c9a",
+      "EventID": "2",
+      "UserID": 5
+>>>>>>> ecfc411a1e342112ad51c33022fec2792772e825
     }
   ],
   "Event_Type": [
